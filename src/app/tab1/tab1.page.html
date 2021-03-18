@@ -1,17 +1,67 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
+<ion-app>
+  <ion-header>
+    <ion-img src="../assets/Header.png"></ion-img>
   </ion-header>
+  <ion-content>
+    <ion-card class="card-1">
+      <ion-item>
+        <ion-searchbar type="text" [(ngModel)]="dest" placeholder="Destination" inputmode="search"></ion-searchbar>
+      </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+      <ion-item>
+        <ion-datetime displayFormat="DD MM" placeholder="Arrivée"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-datetime displayFormat="DD MM" placeholder="Départ"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person-outline" class="pers-img"></ion-icon>
+        <ion-select [interfaceOptions]="customServicesOptions" interface="option" multiple="true"
+          placeholder="Nombre de personne(s)">
+          <ion-select-option value="optOne">1</ion-select-option>
+          <ion-select-option value="optTwo">2</ion-select-option>
+          <ion-select-option value="optThree">3</ion-select-option>
+          <ion-select-option value="optFour">4</ion-select-option>
+          <ion-select-option value="optFive">5</ion-select-option>
+          <ion-select-option value="optSix">6</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <!-- <ion-icon name="person-outline" class="pers-img"></ion-icon> -->
+        <ion-select [interfaceOptions]="customServicesOptions" interface="option" multiple="true" placeholder="Options">
+          <ion-select-option value="optOne">Petit déjeuné inclus</ion-select-option>
+          <ion-select-option value="optTwo">Arrivée tardive</ion-select-option>
+          <ion-select-option value="optThree">Chambre fumeur</ion-select-option>
+          <ion-select-option value="optFour">Animal de compagnie</ion-select-option>
+          <ion-select-option value="optFive">Place de parking</ion-select-option>
+          <ion-select-option value="optSix">Equipement bébé</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-button expand="block">Rechercher</ion-button>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Destinations les plus prisées</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-img src="../assets/la_provence.jpg"></ion-img>
+        <ion-card-subtitle>La Provence</ion-card-subtitle>
+        <hr>
+        <ion-img src="../assets/cote_dalbatre.jpg"></ion-img>
+        <ion-card-subtitle>La Côte d'Albâtre</ion-card-subtitle>
+        <hr>
+        <ion-img src="../assets/saint-malo.jpg"></ion-img>
+        <ion-card-subtitle>Saint-Malo</ion-card-subtitle>
+        <hr>
+        <ion-img src="../assets/les_pyrenees_orientales.jpg"></ion-img>
+        <ion-card-subtitle>Les Pyrénées Orientales</ion-card-subtitle>
+        <hr>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-app>
